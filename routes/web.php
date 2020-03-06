@@ -23,3 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/restaurant-registration', 'RestaurantRegistrationController@form');
 Route::post('/restaurant-registration', 'RestaurantRegistrationController@register');
 
+Route::get('/restaurants', 'RestaurantController@index');
+Route::get('/restaurants/{id}', 'RestaurantController@show');
+
+Route::post('/restaurants/{id}', 'RestaurantController@addComment');

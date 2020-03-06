@@ -16,7 +16,11 @@ class RestaurantRegistrationController extends Controller
 
     public function register(Request $request)
     {
-        //validate
+        $this->validate($request, [
+            'restaurant_name' => 'required|max:255',
+            'restaurant_city' => 'required|max:255',
+            'restaurant_description' => 'required|max:255'
+        ]);
 
         $user = User::create([
             'name' => $request->input('name'),
