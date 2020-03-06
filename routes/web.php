@@ -18,5 +18,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/restaurant-registration', 'RestaurantRegistrationController@form');
+Route::post('/restaurant-registration', 'RestaurantRegistrationController@register');
+
